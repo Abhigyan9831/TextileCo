@@ -1,0 +1,404 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   MARUTI KRIT TEXTILES - Brand Color System
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Brand Colors in Tailwind Theme */
+  --color-mk-cream: #FFFFE3;
+  --color-mk-black: #000000;
+  --color-mk-orange: #FF6B2B;
+  --color-mk-yellow: #FFB800;
+  --color-mk-silver: #C0C0C0;
+  --color-mk-orange-dark: #E55A1B;
+  --color-mk-cream-dark: #F5F5C8;
+}
+
+:root {
+  /* Brand Colors */
+  --mk-cream: #FFFFE3;
+  --mk-black: #000000;
+  --mk-orange: #FF6B2B;
+  --mk-yellow: #FFB800;
+  --mk-silver: #C0C0C0;
+  --mk-orange-dark: #E55A1B;
+  --mk-cream-dark: #F5F5C8;
+
+  /* Shadcn Theme Mapping - Light Mode */
+  --radius: 0.625rem;
+  --background: #FFFFE3;
+  --foreground: #000000;
+  --card: #FFFFE3;
+  --card-foreground: #000000;
+  --popover: #FFFFE3;
+  --popover-foreground: #000000;
+  --primary: #FF6B2B;
+  --primary-foreground: #FFFFE3;
+  --secondary: #F5F5C8;
+  --secondary-foreground: #000000;
+  --muted: #F5F5C8;
+  --muted-foreground: #4A4A3A;
+  --accent: #FFB800;
+  --accent-foreground: #000000;
+  --destructive: #DC2626;
+  --border: #E5E5C3;
+  --input: #E5E5C3;
+  --ring: #FF6B2B;
+  --chart-1: #FF6B2B;
+  --chart-2: #FFB800;
+  --chart-3: #C0C0C0;
+  --chart-4: #000000;
+  --chart-5: #E55A1B;
+  --sidebar: #FFFFE3;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #FF6B2B;
+  --sidebar-primary-foreground: #FFFFE3;
+  --sidebar-accent: #F5F5C8;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #E5E5C3;
+  --sidebar-ring: #FF6B2B;
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #FFFFE3;
+  --card: #141414;
+  --card-foreground: #FFFFE3;
+  --popover: #141414;
+  --popover-foreground: #FFFFE3;
+  --primary: #FF6B2B;
+  --primary-foreground: #FFFFE3;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #FFFFE3;
+  --muted: #1A1A1A;
+  --muted-foreground: #A0A08C;
+  --accent: #FFB800;
+  --accent-foreground: #0A0A0A;
+  --destructive: #DC2626;
+  --border: rgba(255, 255, 227, 0.1);
+  --input: rgba(255, 255, 227, 0.15);
+  --ring: #FF6B2B;
+  --chart-1: #FF6B2B;
+  --chart-2: #FFB800;
+  --chart-3: #C0C0C0;
+  --chart-4: #FFFFE3;
+  --chart-5: #E55A1B;
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #FFFFE3;
+  --sidebar-primary: #FF6B2B;
+  --sidebar-primary-foreground: #FFFFE3;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #FFFFE3;
+  --sidebar-border: rgba(255, 255, 227, 0.1);
+  --sidebar-ring: #FF6B2B;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #FF6B2B;
+    color: #FFFFE3;
+  }
+
+  ::-moz-selection {
+    background-color: #FF6B2B;
+    color: #FFFFE3;
+  }
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5C8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B2B;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4A4A3A;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #FF6B2B;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C0C0C0 #F5F5C8;
+}
+
+.dark * {
+  scrollbar-color: #4A4A3A #1A1A1A;
+}
+
+/* ============================================
+   Custom Animations
+   ============================================ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 43, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 107, 43, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 107, 43, 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   Page Transition Container
+   ============================================ */
+
+.page-transition-container {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.page-transition-container.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.page-transition-container.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.page-transition-container.delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* ============================================
+   Premium Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+/* ============================================
+   Brand Utility Classes
+   ============================================ */
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF6B2B, #FFB800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #FF6B2B, #FFB800);
+}
+
+.bg-gradient-brand-hover {
+  background: linear-gradient(135deg, #E55A1B, #E5A600);
+}
+
+.border-gradient-brand {
+  border-image: linear-gradient(135deg, #FF6B2B, #FFB800) 1;
+}
+
+.shadow-brand {
+  box-shadow: 0 4px 14px -2px rgba(255, 107, 43, 0.3);
+}
+
+.shadow-brand-lg {
+  box-shadow: 0 8px 30px -4px rgba(255, 107, 43, 0.4);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 227, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 229, 195, 0.5);
+}
+
+.dark .glass-effect {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 227, 0.08);
+}
