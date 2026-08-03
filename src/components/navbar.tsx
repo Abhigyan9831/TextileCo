@@ -15,8 +15,8 @@ const navLinks = [
   { label: 'Home', route: 'home' },
   { label: 'About', route: 'about' },
   { label: 'Services', route: 'services' },
+  { label: 'Our Products', route: 'products' },
   { label: 'Portfolio', route: 'portfolio' },
-  { label: 'Blog', route: 'blog' },
   { label: 'Contact', route: 'contact' },
 ]
 
@@ -81,15 +81,23 @@ export default function Navbar({ currentPage, onNavigate, onBookContract }: Navb
             {/* Logo */}
             <motion.button
               onClick={() => handleNavClick('home')}
-              className="flex flex-col items-start group cursor-pointer"
+              className="flex items-center gap-3 group cursor-pointer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg sm:text-xl lg:text-2xl font-black tracking-[0.15em] text-black leading-none">
-                MARUTI KRIT
-              </span>
-              <span className="text-[10px] sm:text-xs lg:text-sm font-light tracking-[0.35em] text-black/60 leading-none mt-0.5">
-                TEXTILES
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Logo_icon.png"
+                alt="Maruti Krit Textiles"
+                className="h-10 lg:h-12 w-auto object-contain"
+              />
+              <span className="flex flex-col items-start">
+                <span className="text-lg sm:text-xl lg:text-2xl font-black tracking-[0.15em] text-black leading-none">
+                  MARUTI KRIT
+                </span>
+                <span className="text-[10px] sm:text-xs lg:text-sm font-light tracking-[0.35em] text-black/60 leading-none mt-0.5">
+                  TEXTILES
+                </span>
               </span>
             </motion.button>
 
@@ -113,7 +121,7 @@ export default function Navbar({ currentPage, onNavigate, onBookContract }: Navb
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}
             >
-              Book a Contract
+              Get in Touch
             </motion.button>
 
             {/* Mobile Hamburger */}
@@ -212,7 +220,7 @@ export default function Navbar({ currentPage, onNavigate, onBookContract }: Navb
                   }}
                   className="w-full py-4 bg-[#FF6B2B] text-black font-semibold text-lg tracking-wide hover:bg-[#FF6B2B]/90 transition-colors duration-300 cursor-pointer"
                 >
-                  Book a Contract
+                  Get in Touch
                 </button>
               </motion.div>
             </div>

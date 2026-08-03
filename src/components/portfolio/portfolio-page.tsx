@@ -338,7 +338,7 @@ export default function PortfolioPage({ onNavigate, onBookContract }: PortfolioP
                   Want to See Your Brand Here?
                 </h2>
                 <p className="mt-4 text-[#FFFFE3]/40 max-w-lg mx-auto leading-relaxed">
-                  Join hundreds of global brands who trust MARUTI KRIT TEXTILES for premium manufacturing.
+                  Join hundreds of brands who trust MARUTI KRIT TEXTILES for premium manufacturing.
                 </p>
                 <motion.button
                   onClick={onBookContract}

@@ -7,6 +7,7 @@ import Footer from '@/components/footer'
 import HomePage from '@/components/home/home-page'
 import AboutPage from '@/components/about/about-page'
 import ServicesPage from '@/components/services/services-page'
+import ProductsPage from '@/components/products/products-page'
 import PortfolioPage from '@/components/portfolio/portfolio-page'
 import BlogPage from '@/components/blog/blog-page'
 import ContactPage from '@/components/contact/contact-page'
@@ -41,6 +42,8 @@ export default function Home() {
         return <AboutPage onNavigate={handleNavigate} />
       case 'services':
         return <ServicesPage onNavigate={handleNavigate} onBookContract={handleBookContract} />
+      case 'products':
+        return <ProductsPage onNavigate={handleNavigate} onBookContract={handleBookContract} />
       case 'portfolio':
         return <PortfolioPage onNavigate={handleNavigate} onBookContract={handleBookContract} />
       case 'blog':

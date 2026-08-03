@@ -18,18 +18,18 @@ export const COMPANY = {
   name: "MARUTI KRIT TEXTILES",
   tagline: "Weaving Excellence Since 2009",
   description:
-    "MARUTI KRIT TEXTILES is a premier textile manufacturing company with over 15 years of excellence in the industry. We specialize in high-quality garment production, innovative fabric sourcing, and custom textile solutions that meet the demands of global fashion brands and retailers.",
+    "MARUTI KRIT TEXTILES is a premier textile manufacturing company with over 10 years of excellence in the industry. We specialize in high-quality garment production, innovative fabric sourcing, and custom textile solutions that meet the demands of fashion brands and retailers.",
   shortDescription:
-    "Premium textile manufacturing with 15+ years of excellence. From fabric to fashion, we deliver quality at scale.",
+    "Premium textile manufacturing with 10+ years of excellence. From fabric to fashion, we deliver quality at scale.",
   phone: "+91-9876543210",
   email: "info@marutikrittextiles.com",
   address: {
     street: "Sector 12, Industrial Area",
-    city: "Surat",
-    state: "Gujarat",
-    zip: "395002",
+    city: "Kolkata",
+    state: "West Bengal",
+    zip: "700001",
     country: "India",
-    full: "Sector 12, Industrial Area, Surat, Gujarat 395002, India",
+    full: "Sector 12, Industrial Area, Kolkata, West Bengal 700001, India",
   },
   foundedYear: 2009,
   website: "https://marutikrittextiles.com",
@@ -111,7 +111,7 @@ export const SERVICES: Service[] = [
     id: "quality-assurance",
     title: "Quality Assurance",
     description:
-      "Rigorous quality control processes that meet global standards. Every product undergoes multiple inspection stages to ensure consistency and excellence.",
+      "Rigorous quality control processes that meet international standards. Every product undergoes multiple inspection stages to ensure consistency and excellence.",
     icon: Shield,
     features: [
       "AQL inspection standards",
@@ -122,9 +122,9 @@ export const SERVICES: Service[] = [
   },
   {
     id: "global-logistics",
-    title: "Global Logistics & Export",
+    title: "Logistics & Export",
     description:
-      "Seamless international shipping and logistics management. We handle customs, documentation, and delivery to 25+ countries with reliable supply chain partnerships.",
+      "Seamless international shipping and logistics management. We handle customs, documentation, and delivery to 25+ cities with reliable supply chain partnerships.",
     icon: Globe,
     features: [
       "Door-to-door delivery",
@@ -186,23 +186,23 @@ export interface Stat {
 
 export const STATS: Stat[] = [
   {
-    value: "15",
+    value: "10",
     label: "Years of Excellence",
     suffix: "+",
   },
   {
-    value: "5",
+    value: "2",
     label: "Garments Produced",
     suffix: "M+",
   },
   {
     value: "500",
-    label: "Global Clients",
+    label: "Clients",
     suffix: "+",
   },
   {
     value: "25",
-    label: "Countries Served",
+    label: "Products",
     suffix: "+",
   },
 ];
@@ -273,7 +273,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 1,
     title: "The Future of Sustainable Textile Manufacturing in India",
     excerpt:
-      "Exploring how Indian textile manufacturers are leading the global shift towards sustainable and eco-friendly production practices, from organic cotton to zero-waste initiatives.",
+      "Exploring how Indian textile manufacturers are leading the shift towards sustainable and eco-friendly production practices, from organic cotton to zero-waste initiatives.",
     category: "Sustainability",
     date: "2025-01-15",
     readTime: "6 min read",
@@ -303,7 +303,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 4,
     title: "Building a Resilient Supply Chain: Lessons from the Textile Industry",
     excerpt:
-      "The pandemic exposed critical vulnerabilities in global textile supply chains. Here's how leading manufacturers are building more resilient and agile operations for the future.",
+      "The pandemic exposed critical vulnerabilities in textile supply chains. Here's how leading manufacturers are building more resilient and agile operations for the future.",
     category: "Supply Chain",
     date: "2024-12-10",
     readTime: "8 min read",

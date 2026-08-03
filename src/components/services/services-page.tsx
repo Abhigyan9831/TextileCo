@@ -44,7 +44,7 @@ const processSteps = [
     number: '04',
     icon: Truck,
     title: 'Delivery',
-    description: 'Reliable global logistics ensure your products arrive on time and in perfect condition.',
+    description: 'Reliable logistics ensure your products arrive on time and in perfect condition.',
   },
 ]
 
@@ -85,7 +85,7 @@ export default function ServicesPage({ onNavigate, onBookContract }: ServicesPag
 
           <FadeUp delay={0.2}>
             <p className="mt-6 text-lg sm:text-xl text-[#FFFFE3]/50 max-w-2xl leading-relaxed">
-              End-to-end textile manufacturing solutions for global brands
+              End-to-end textile manufacturing solutions for brands
             </p>
           </FadeUp>
 

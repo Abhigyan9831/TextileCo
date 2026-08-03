@@ -23,8 +23,8 @@ const quickLinks = [
   { label: 'Home', route: 'home' },
   { label: 'About', route: 'about' },
   { label: 'Services', route: 'services' },
+  { label: 'Our Products', route: 'products' },
   { label: 'Portfolio', route: 'portfolio' },
-  { label: 'Blog', route: 'blog' },
   { label: 'Contact', route: 'contact' },
 ]
 
@@ -191,7 +191,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <MapPin className="w-4 h-4 mt-0.5 text-[#FF6B2B] shrink-0" />
                 <p className="text-sm text-[#FFFFE3]/70 leading-relaxed">
                   Industrial Area, Phase II,<br />
-                  Bhilwara, Rajasthan 311001
+                  Kolkata, West Bengal 700001
                 </p>
               </li>
             </ul>

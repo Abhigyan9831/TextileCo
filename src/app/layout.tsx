@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | MARUTI KRIT TEXTILES",
   },
   description:
-    "MARUTI KRIT TEXTILES is a leading premium textile manufacturer with 15+ years of excellence. Specializing in garment production, fabric sourcing, and custom textile solutions for global brands across 25+ countries.",
+    "MARUTI KRIT TEXTILES is a leading premium textile manufacturer with 10+ years of excellence. Specializing in garment production, fabric sourcing, and custom textile solutions for brands across 25+ cities.",
   keywords: [
     "textile manufacturing",
     "garment production",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "MARUTI KRIT TEXTILES",
     title: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
     description:
-      "Leading premium textile manufacturer with 15+ years of excellence. Specializing in garment production, fabric sourcing, and custom textile solutions for global brands.",
+      "Leading premium textile manufacturer with 10+ years of excellence. Specializing in garment production, fabric sourcing, and custom textile solutions for brands.",
     images: [
       {
         url: "/og-image.png",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
     description:
-      "Leading premium textile manufacturer with 15+ years of excellence. Garment production, fabric sourcing, and custom textile solutions.",
+      "Leading premium textile manufacturer with 10+ years of excellence. Garment production, fabric sourcing, and custom textile solutions.",
     images: ["/og-image.png"],
     creator: "@marutikrittextiles",
   },
@@ -97,7 +97,7 @@ const jsonLd = {
   "@type": "ManufacturingBusiness",
   name: "MARUTI KRIT TEXTILES",
   description:
-    "Leading premium textile manufacturer with 15+ years of excellence in garment production, fabric sourcing, and custom textile solutions.",
+    "Leading premium textile manufacturer with 10+ years of excellence in garment production, fabric sourcing, and custom textile solutions.",
   url: "https://marutikrittextiles.com",
   logo: "https://marutikrittextiles.com/logo.png",
   image: "https://marutikrittextiles.com/og-image.png",
@@ -106,8 +106,8 @@ const jsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "Sector 12, Industrial Area",
-    addressLocality: "Surat",
-    addressRegion: "Gujarat",
+    addressLocality: "Kolkata",
+    addressRegion: "West Bengal",
     postalCode: "395002",
     addressCountry: "IN",
   },

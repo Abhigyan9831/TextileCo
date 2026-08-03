@@ -37,7 +37,7 @@ const TIMELINE_MILESTONES = [
     year: '2009',
     title: 'The Beginning',
     description:
-      'Founded in Surat with a vision for quality textile manufacturing',
+      'Founded in Kolkata with a vision for quality textile manufacturing',
   },
   {
     year: '2013',
@@ -46,7 +46,7 @@ const TIMELINE_MILESTONES = [
   },
   {
     year: '2017',
-    title: 'Global Recognition',
+    title: 'Industry Recognition',
     description: 'Achieved GOTS certification and entered European markets',
   },
   {
@@ -56,8 +56,8 @@ const TIMELINE_MILESTONES = [
   },
   {
     year: '2025',
-    title: 'Global Reach',
-    description: 'Serving 500+ clients across 25+ countries',
+    title: 'International Reach',
+    description: 'Serving 500+ clients across 25+ cities',
   },
 ] as const;
 
@@ -104,7 +104,7 @@ const TEAM_MEMBERS = [
   {
     name: 'Meera Joshi',
     role: 'Quality Director',
-    bio: '15+ years ensuring world-class quality standards',
+    bio: '10+ years ensuring world-class quality standards',
     initials: 'MJ',
   },
 ] as const;
@@ -297,7 +297,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
                   </h3>
                   <p className="text-white/70 leading-relaxed text-lg">
                     To be the most trusted and sustainable textile manufacturing
-                    partner for global fashion brands, setting new standards in
+                    partner for fashion brands, setting new standards in
                     quality and ethical production.
                   </p>
                 </div>

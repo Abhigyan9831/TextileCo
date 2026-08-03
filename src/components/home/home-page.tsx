@@ -8,6 +8,7 @@ import {
   Shield,
   Globe,
   Leaf,
+  Tag,
   Layers,
   CheckCircle,
   Package,
@@ -40,7 +41,7 @@ const HOME_SERVICES = [
     icon: Shirt,
     title: 'T-shirt Manufacturing',
     description:
-      'End-to-end T-shirt production with premium fabrics and precision stitching for global brands.',
+      'End-to-end T-shirt production with premium fabrics and precision stitching for brands.',
   },
   {
     icon: Scissors,
@@ -61,16 +62,16 @@ const HOME_SERVICES = [
       'Rigorous multi-stage quality control meeting AQL standards and international certifications.',
   },
   {
-    icon: Globe,
-    title: 'Export Support',
+    icon: Package,
+    title: 'Bulk Order Solutions',
     description:
-      'Seamless logistics, customs handling, and door-to-door delivery to 25+ countries worldwide.',
+      'Scalable manufacturing for startups, brands, wholesellers and corporate clients.',
   },
   {
-    icon: Leaf,
-    title: 'Sustainable Production',
+    icon: Tag,
+    title: 'Private Label Solutions',
     description:
-      'GOTS-certified eco-friendly manufacturing with solar power, water recycling, and zero-waste goals.',
+      'Custom labels, packaging and branding for your apparel business.',
   },
 ]
 
@@ -88,7 +89,7 @@ const PROCESS_STEPS = [
     number: '02',
     icon: Layers,
     title: 'Fabric Sourcing',
-    description: 'Curating premium fabrics from our network of 200+ verified global suppliers.',
+    description: 'Curating premium fabrics from our network of 200+ verified suppliers.',
   },
   {
     number: '03',
@@ -106,7 +107,7 @@ const PROCESS_STEPS = [
     number: '05',
     icon: Package,
     title: 'Packaging & Dispatch',
-    description: 'Careful packaging and reliable logistics for on-time global delivery.',
+    description: 'Careful packaging and reliable logistics for on-time delivery.',
   },
 ]
 
@@ -116,7 +117,7 @@ const PROCESS_STEPS = [
 const WHY_CHOOSE_ITEMS = [
   {
     title: 'Quality Assurance',
-    description: 'Every garment undergoes rigorous multi-stage quality checks meeting global standards.',
+    description: 'Every garment undergoes rigorous multi-stage quality checks meeting international standards.',
   },
   {
     title: 'Scalable Production',
@@ -216,7 +217,7 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
 
             <FadeUp delay={0.8}>
               <p className="text-base sm:text-lg text-white/60 mt-8 max-w-xl leading-relaxed">
-                Premium T-shirt Manufacturing &amp; Garment Production for Global Brands
+                Premium T-shirt Manufacturing &amp; Garment Production for Fashion Brands and Resellers
               </p>
             </FadeUp>
 
@@ -316,10 +317,10 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
                   Where Tradition Meets Innovation
                 </h2>
                 <p className="text-black/60 text-base sm:text-lg mt-6 leading-relaxed">
-                  With over 15 years of expertise, MARUTI KRIT TEXTILES combines time-honoured
-                  craftsmanship with cutting-edge technology to deliver garments that exceed global
-                  standards. From our state-of-the-art facility in Surat, we serve fashion brands
-                  and retailers across 25+ countries with unwavering commitment to quality and
+                  With over 10 years of expertise, MARUTI KRIT TEXTILES combines time-honoured
+                  craftsmanship with cutting-edge technology to deliver garments that exceed international
+                  standards. From our state-of-the-art facility in Kolkata, we serve fashion brands
+                  and retailers across 25+ cities with unwavering commitment to quality and
                   sustainability.
                 </p>
                 <motion.button
