@@ -192,10 +192,10 @@ export default function ServicesPage({ onNavigate, onBookContract }: ServicesPag
             </div>
           </FadeUp>
 
-          {/* Desktop: Horizontal timeline */}
-          <div className="hidden lg:block">
+          {/* Process steps grid */}
+          <div>
             <StaggerContainer
-              className="grid grid-cols-4 gap-0"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0"
               staggerDelay={0.15}
             >
               {processSteps.map((step, index) => {

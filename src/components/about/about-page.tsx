@@ -416,7 +416,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
           <StaggerContainer
             staggerDelay={0.15}
-            className="grid grid-cols-2 grid-rows-2 gap-4 lg:gap-6 h-auto lg:h-[520px]"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 h-auto lg:h-[520px]"
           >
             {GALLERY_IMAGES.map((image, index) => (
               <motion.div

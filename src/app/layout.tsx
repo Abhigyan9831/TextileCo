@@ -101,8 +101,8 @@ const jsonLd = {
   url: "https://marutikrittextiles.com",
   logo: "https://marutikrittextiles.com/logo.png",
   image: "https://marutikrittextiles.com/og-image.png",
-  telephone: "+91-9876543210",
-  email: "info@marutikrittextiles.com",
+  telephone: "+91-8013244984",
+  email: "marutikrittextiles@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Sector 12, Industrial Area",
@@ -160,6 +160,7 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[#FFFFE3] text-foreground`}
         style={{ backgroundColor: "#FFFFE3" }}
       >

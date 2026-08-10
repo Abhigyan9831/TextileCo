@@ -21,8 +21,8 @@ export const COMPANY = {
     "MARUTI KRIT TEXTILES is a premier textile manufacturing company with over 10 years of excellence in the industry. We specialize in high-quality garment production, innovative fabric sourcing, and custom textile solutions that meet the demands of fashion brands and retailers.",
   shortDescription:
     "Premium textile manufacturing with 10+ years of excellence. From fabric to fashion, we deliver quality at scale.",
-  phone: "+91-9876543210",
-  email: "info@marutikrittextiles.com",
+  phone: "+91-8013244984",
+  email: "marutikrittextiles@gmail.com",
   address: {
     street: "Sector 12, Industrial Area",
     city: "Kolkata",

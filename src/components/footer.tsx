@@ -176,14 +176,14 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-0.5 text-[#FF6B2B] shrink-0" />
                 <div>
-                  <p className="text-sm text-[#FFFFE3]/70">+91 98765 43210</p>
+                  <p className="text-sm text-[#FFFFE3]/70">+91 80132 44984</p>
                   <p className="text-xs text-[#FFFFE3]/30 mt-0.5">Mon–Sat, 9AM–6PM IST</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-[#FF6B2B] shrink-0" />
                 <div>
-                  <p className="text-sm text-[#FFFFE3]/70">info@marutikrit.com</p>
+                  <p className="text-sm text-[#FFFFE3]/70">marutikrittextiles@gmail.com</p>
                   <p className="text-xs text-[#FFFFE3]/30 mt-0.5">We respond within 24hrs</p>
                 </div>
               </li>
@@ -207,7 +207,15 @@ export default function Footer({ onNavigate }: FooterProps) {
               &copy; {new Date().getFullYear()} Maruti Krit Textiles. All rights reserved.
             </p>
             <p className="italic tracking-wide">
-              Designed with precision
+              Designed by{" "}
+              <a
+                href="https://xtraclicks.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF6B2B] hover:underline underline-offset-4"
+              >
+                https://xtraclicks.com/
+              </a>
             </p>
           </div>
         </div>
