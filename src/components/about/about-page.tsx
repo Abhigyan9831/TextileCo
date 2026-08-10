@@ -84,28 +84,10 @@ const PHILOSOPHY_PILLARS = [
 
 const TEAM_MEMBERS = [
   {
-    name: 'Rajesh Kumar',
+    name: 'Jishnu Ghosh',
     role: 'Founder & CEO',
-    bio: '30+ years in textile industry, visionary leader',
-    initials: 'RK',
-  },
-  {
-    name: 'Anita Patel',
-    role: 'Head of Operations',
-    bio: 'Expert in supply chain and production management',
-    initials: 'AP',
-  },
-  {
-    name: 'Vikram Singh',
-    role: 'Creative Director',
-    bio: 'Award-winning textile designer and trend forecaster',
-    initials: 'VS',
-  },
-  {
-    name: 'Meera Joshi',
-    role: 'Quality Director',
-    bio: '10+ years ensuring world-class quality standards',
-    initials: 'MJ',
+    bio: '10+ years in textile industry, visionary leader',
+    initials: 'JG',
   },
 ] as const;
 
@@ -374,7 +356,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
           <StaggerContainer
             staggerDelay={0.12}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 gap-6 max-w-md mx-auto"
           >
             {TEAM_MEMBERS.map((member) => (
               <motion.div
