@@ -28,8 +28,9 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
   }
 
-  const handleBookContract = (product?: { title: string; image: string; sizes: string[]; sku: string }) => {
-    setSelectedProduct(product)
+  const handleBookContract = (product?: { title: string; image: string; sizes: string[]; sku: string } | any) => {
+    const validProduct = product && typeof product === 'object' && 'title' in product ? product : undefined
+    setSelectedProduct(validProduct)
     setCurrentPage('book')
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
   }
