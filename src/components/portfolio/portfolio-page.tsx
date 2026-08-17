@@ -22,24 +22,18 @@ interface PortfolioPageProps {
   onBookContract: () => void
 }
 
-type Category = 'All' | 'T-Shirts' | 'Activewear' | 'Casual Wear' | 'Formal Wear' | 'Packaging'
+type Category = 'All' | 'T shirts' | 'Bulk Packaging'
 
 const categories: Category[] = [
   'All',
-  'T-Shirts',
-  'Activewear',
-  'Casual Wear',
-  'Formal Wear',
-  'Packaging',
+  'T shirts',
+  'Bulk Packaging',
 ]
 
 const categoryIcons: Record<Category, React.ElementType | null> = {
   All: null,
-  'T-Shirts': Shirt,
-  Activewear: Dumbbell,
-  'Casual Wear': Sun,
-  'Formal Wear': Briefcase,
-  Packaging: Package,
+  'T shirts': Shirt,
+  'Bulk Packaging': Package,
 }
 
 interface PortfolioItem {
@@ -52,53 +46,60 @@ interface PortfolioItem {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    id: 'premium-cotton-tees',
-    image: '/images/products-1.png',
-    title: 'Premium Cotton Tees',
-    category: 'T-Shirts',
-    span: 'tall',
-  },
-  {
-    id: 'streetwear-collection',
-    image: '/images/products-2.png',
-    title: 'Streetwear Collection',
-    category: 'Casual Wear',
-    span: 'normal',
-  },
-  {
-    id: 'color-collection',
-    image: '/images/collection.png',
-    title: 'Color Collection',
-    category: 'T-Shirts',
+    id: 'varsity-jacket',
+    image: '/images/p4.jpeg',
+    title: 'Varsity Letterman Jacket',
+    category: 'T shirts',
     span: 'wide',
   },
   {
-    id: 'fabric-quality',
-    image: '/images/fabric-texture.png',
-    title: 'Fabric Quality',
-    category: 'All',
+    id: 'beige-hoodie',
+    image: '/images/p5.jpeg',
+    title: 'Classic Beige Hoodie',
+    category: 'T shirts',
     span: 'normal',
   },
   {
-    id: 'brand-packaging',
+    id: 'yellow-t-shirt',
+    image: '/images/p7.jpeg',
+    title: 'Cotton Yellow T-Shirt',
+    category: 'T shirts',
+    span: 'normal',
+  },
+  {
+    id: 'cyan-t-shirt',
+    image: '/images/p8.jpeg',
+    title: 'Active Cyan T-Shirt',
+    category: 'T shirts',
+    span: 'tall',
+  },
+  {
+    id: 'red-hoodie',
+    image: '/images/p10.jpeg',
+    title: 'Premium Red Hoodie',
+    category: 'T shirts',
+    span: 'tall',
+  },
+  {
+    id: 'bulk-packaging-1',
+    image: '/images/portfolio1.jpeg',
+    title: 'Bulk Carton Packaging',
+    category: 'Bulk Packaging',
+    span: 'normal',
+  },
+  {
+    id: 'bulk-packaging-2',
+    image: '/images/portfolio2.jpeg',
+    title: 'Premium Brand Boxes',
+    category: 'Bulk Packaging',
+    span: 'wide',
+  },
+  {
+    id: 'custom-packaging',
     image: '/images/packaging.png',
-    title: 'Brand Packaging',
-    category: 'Packaging',
+    title: 'Custom Brand Packaging',
+    category: 'Bulk Packaging',
     span: 'normal',
-  },
-  {
-    id: 'custom-prints',
-    image: '/images/printing.png',
-    title: 'Custom Prints',
-    category: 'T-Shirts',
-    span: 'tall',
-  },
-  {
-    id: 'manufacturing-excellence',
-    image: '/images/factory.png',
-    title: 'Manufacturing Excellence',
-    category: 'All',
-    span: 'wide',
   },
 ]
 

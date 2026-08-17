@@ -12,12 +12,14 @@ import {
   ShieldCheck,
   FileText,
   CheckCircle2,
+  X,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FadeUp, StaggerContainer, staggerChildVariants } from '@/components/motion'
 
 interface BookPageProps {
   onNavigate: (page: string) => void
+  selectedProduct?: { title: string; image: string; sizes: string[]; sku: string }
 }
 
 const garmentTypes = ['T-Shirts', 'Polo Shirts', 'Hoodies', 'Joggers', 'Shorts', 'Other']
@@ -57,7 +59,7 @@ const trustBadges = [
   { icon: ShieldCheck, label: 'Dedicated Manager', description: 'Personal project manager' },
 ]
 
-export default function BookPage({ onNavigate }: BookPageProps) {
+export default function BookPage({ onNavigate, selectedProduct }: BookPageProps) {
   const [formData, setFormData] = useState({
     // Section 1: Your Information
     fullName: '',
@@ -65,11 +67,13 @@ export default function BookPage({ onNavigate }: BookPageProps) {
     phone: '',
     companyName: '',
     designation: '',
+    address: '',
     // Section 2: Product Details
     garmentTypes: [] as string[],
     quantity: '',
     fabricPreference: '',
     gsmRange: '',
+    selectedSize: selectedProduct?.sizes[0] ?? '',
     // Section 3: Customization
     printingRequired: '',
     printingType: '',
@@ -86,6 +90,7 @@ export default function BookPage({ onNavigate }: BookPageProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [productDismissed, setProductDismissed] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -108,14 +113,29 @@ export default function BookPage({ onNavigate }: BookPageProps) {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          selectedProduct: selectedProduct && !productDismissed ? selectedProduct : undefined,
+        }),
+      })
+      if (res.ok) {
+        setIsSubmitted(true)
+        setTimeout(() => setIsSubmitted(false), 6000)
+      } else {
+        alert('Failed to send inquiry. Please try again.')
+      }
+    } catch {
+      alert('Network error. Please try again.')
+    } finally {
       setIsSubmitting(false)
-      setIsSubmitted(true)
-      setTimeout(() => setIsSubmitted(false), 6000)
-    }, 2000)
+    }
   }
 
   return (
@@ -256,6 +276,20 @@ export default function BookPage({ onNavigate }: BookPageProps) {
                         className="w-full px-4 py-3 bg-transparent border border-black/10 text-black placeholder:text-black/25 text-sm focus:outline-none focus:border-mk-orange transition-colors duration-300"
                       />
                     </div>
+                    <div className="sm:col-span-2">
+                      <label htmlFor="address" className="block text-sm font-medium text-black/70 mb-2">
+                        Address
+                      </label>
+                      <textarea
+                        id="address"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        rows={2}
+                        placeholder="Full shipping / billing address"
+                        className="w-full px-4 py-3 bg-transparent border border-black/10 text-black placeholder:text-black/25 text-sm focus:outline-none focus:border-mk-orange transition-colors duration-300 resize-vertical"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -270,6 +304,42 @@ export default function BookPage({ onNavigate }: BookPageProps) {
                     </div>
                     <h3 className="text-lg font-bold text-black">Product Details</h3>
                   </div>
+
+                  {/* Product Preview Card */}
+                  {selectedProduct && !productDismissed && (
+                    <div className="mb-6 p-4 border border-[#FF6B2B]/30 bg-[#FF6B2B]/5 flex gap-4 items-start relative">
+                      <button
+                        type="button"
+                        onClick={() => setProductDismissed(true)}
+                        className="absolute top-2 right-2 text-black/40 hover:text-black transition-colors cursor-pointer"
+                        title="Remove product"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                      <img
+                        src={selectedProduct.image}
+                        alt={selectedProduct.title}
+                        className="w-24 h-24 object-contain bg-white/60 border border-black/10 p-1"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-[#FF6B2B] font-semibold uppercase tracking-wider mb-0.5">Selected Product</p>
+                        <p className="text-base font-black text-black leading-tight">{selectedProduct.title}</p>
+                        <p className="text-xs text-black/50 mt-0.5 mb-3">SKU: {selectedProduct.sku}</p>
+                        <div>
+                          <label className="block text-xs font-medium text-black/70 mb-1">Select Size</label>
+                          <select
+                            value={formData.selectedSize}
+                            onChange={(e) => setFormData(prev => ({ ...prev, selectedSize: e.target.value }))}
+                            className="px-3 py-1.5 bg-white border border-black/10 text-black text-sm focus:outline-none focus:border-[#FF6B2B] transition-colors duration-300 appearance-none cursor-pointer"
+                          >
+                            {selectedProduct.sizes.map(s => (
+                              <option key={s} value={s}>{s}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Garment Type Checkboxes */}
                   <div className="mb-6">

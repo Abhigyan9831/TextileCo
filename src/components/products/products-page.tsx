@@ -5,9 +5,11 @@ import { useState } from 'react'
 import { ChevronRight, ArrowRight, ChevronDown } from 'lucide-react'
 import { FadeUp } from '@/components/motion'
 
+const WHATSAPP_NUMBER = '918013244984'
+
 interface ProductsPageProps {
   onNavigate: (page: string) => void
-  onBookContract: () => void
+  onBookContract: (product?: { title: string; image: string; sizes: string[]; sku: string }) => void
 }
 
 const SWATCHES = ['#FFD700', '#C85A17', '#FFFFFF', '#0000CD', '#00A86B', '#ADFF2F', '#00BFFF', '#000000']
@@ -205,9 +207,14 @@ const PRODUCTS = [
   },
 ]
 
-function ProductCard({ product, idx }: { product: typeof PRODUCTS[0]; idx: number }) {
+function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCTS[0]; idx: number; onBookContract: ProductsPageProps['onBookContract'] }) {
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
   const [isMoreOpen, setIsMoreOpen] = useState(false)
+
+  const handleWhatsApp = () => {
+    const msg = encodeURIComponent(`Hi, I'm interested in ${product.title} (SKU: ${product.sku}). Please share more details.`)
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank')
+  }
 
   return (
     <FadeUp delay={idx * 0.05}>
@@ -262,6 +269,28 @@ function ProductCard({ product, idx }: { product: typeof PRODUCTS[0]; idx: numbe
                     }}
                   />
                 ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-2 w-full max-w-[360px]">
+                <motion.button
+                  onClick={() => onBookContract({ title: product.title, image: product.image, sizes: product.sizes, sku: product.sku })}
+                  className="flex-1 py-2.5 bg-[#FF6B2B] text-black font-bold text-xs tracking-wide flex items-center justify-center gap-1.5 cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <ArrowRight className="w-3.5 h-3.5" />
+                  Get in Touch
+                </motion.button>
+                <motion.button
+                  onClick={handleWhatsApp}
+                  className="py-1 cursor-pointer flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.93 }}
+                  title="Chat on WhatsApp"
+                >
+                  <img src="/images/whatsapp-icon.png" alt="WhatsApp" className="w-10 h-10 object-contain" />
+                </motion.button>
               </div>
             </div>
 
@@ -394,12 +423,10 @@ function ProductCard({ product, idx }: { product: typeof PRODUCTS[0]; idx: numbe
           </div>
 
           {/* Footer notes */}
-          <div className="mt-8 pt-4 border-t border-black/15 text-xs text-black/70 italic space-y-1">
-            <p>• {product.notes[0]}</p>
-            <div className="flex flex-col sm:flex-row justify-between gap-1 not-italic text-black/80 font-medium">
-              <p>• {product.notes[1]}</p>
-              <p>• {product.notes[2]}</p>
-            </div>
+          <div className="mt-8 pt-4 border-t border-black/15 text-xs text-black/70 italic space-y-1.5">
+            {product.notes.map((note, nIdx) => (
+              <p key={nIdx}>• {note}</p>
+            ))}
           </div>
         </div>
       </div>
@@ -447,7 +474,7 @@ export default function ProductsPage({ onNavigate, onBookContract }: ProductsPag
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
           {PRODUCTS.map((product, idx) => (
-            <ProductCard key={idx} product={product} idx={idx} />
+            <ProductCard key={idx} product={product} idx={idx} onBookContract={onBookContract} />
           ))}
         </div>
       </section>

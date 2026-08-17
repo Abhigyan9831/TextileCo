@@ -21,13 +21,15 @@ const pageVariants = {
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [selectedProduct, setSelectedProduct] = useState<{ title: string; image: string; sizes: string[]; sku: string } | undefined>(undefined)
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page)
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
   }
 
-  const handleBookContract = () => {
+  const handleBookContract = (product?: { title: string; image: string; sizes: string[]; sku: string }) => {
+    setSelectedProduct(product)
     setCurrentPage('book')
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
   }
@@ -51,7 +53,7 @@ export default function Home() {
       case 'contact':
         return <ContactPage onNavigate={handleNavigate} />
       case 'book':
-        return <BookPage onNavigate={handleNavigate} />
+        return <BookPage onNavigate={handleNavigate} selectedProduct={selectedProduct} />
       default:
         return <HomePage onNavigate={handleNavigate} onBookContract={handleBookContract} />
     }

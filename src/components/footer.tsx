@@ -214,7 +214,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 rel="noopener noreferrer"
                 className="text-[#FF6B2B] hover:underline underline-offset-4"
               >
-                https://xtraclicks.com/
+                Xtraclicks Marketing
               </a>
             </p>
           </div>
