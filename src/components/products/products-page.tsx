@@ -301,7 +301,7 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
                 <div className="text-lg sm:text-xl font-bold text-black/90 space-y-1">
                   {product.prices.map((p, pIdx) => (
                     <div key={pIdx} className="flex items-center gap-2">
-                      <span>Price : {p.price}</span>
+                      <span>Price : {p.price}/pcs</span>
                       <span className="text-sm text-black/60 font-normal">{p.detail}</span>
                     </div>
                   ))}
@@ -423,7 +423,7 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
           </div>
 
           {/* Footer notes */}
-          <div className="mt-8 pt-4 border-t border-black/15 text-xs text-black/70 italic space-y-1.5">
+          <div className="mt-8 pt-4 border-t border-black/15 text-xs text-black font-bold space-y-1.5">
             {product.notes.map((note, nIdx) => (
               <p key={nIdx}>• {note}</p>
             ))}
