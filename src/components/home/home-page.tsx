@@ -505,6 +505,15 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
                   We combine deep industry expertise with modern manufacturing capabilities to
                   deliver results that exceed expectations, every time.
                 </p>
+                <motion.button
+                  onClick={onBookContract}
+                  className="mt-6 inline-flex items-center gap-2.5 px-6 py-3 bg-[#FF6B2B] text-black font-bold text-sm tracking-wide hover:bg-[#E55A1B] transition-colors duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Reach Us
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
               </div>
             </FadeUp>
 
