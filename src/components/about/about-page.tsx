@@ -72,7 +72,7 @@ const PHILOSOPHY_PILLARS = [
     icon: Leaf,
     title: 'Sustainability',
     description:
-      'From GOTS-certified production to zero-waste initiatives, sustainability is woven into every aspect of our operations — not as an afterthought, but as a founding principle.',
+      'From GOTS-certified production to zero-waste initiatives, sustainability is woven into every aspect of our operations, not as an afterthought, but as a founding principle.',
   },
   {
     icon: Lightbulb,

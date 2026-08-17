@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
     id: "fabric-sourcing",
     title: "Fabric Sourcing",
     description:
-      "Access to a vast network of premium fabric suppliers worldwide. We source the finest materials — from organic cotton to technical fabrics — tailored to your specifications.",
+      "Access to a vast network of premium fabric suppliers worldwide. We source the finest materials, from organic cotton to technical fabrics, tailored to your specifications.",
     icon: Scissors,
     features: [
       "200+ fabric varieties",
@@ -323,7 +323,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 6,
     title: "From Loom to Lifestyle: The Journey of a Garment",
     excerpt:
-      "Ever wondered what goes into making the clothes you wear? We take you behind the scenes of our manufacturing process — from raw fiber to finished product ready for the retail shelf.",
+      "Ever wondered what goes into making the clothes you wear? We take you behind the scenes of our manufacturing process, from raw fiber to finished product ready for the retail shelf.",
     category: "Manufacturing",
     date: "2024-11-15",
     readTime: "5 min read",

@@ -231,7 +231,7 @@ export async function POST(req: NextRequest) {
       from: 'Maruti Krit Textiles <onboarding@resend.dev>',
       to: [TO_EMAIL],
       replyTo: email,
-      subject: `New Inquiry from ${fullName}${selectedProduct ? ` — ${selectedProduct.title}` : ''}`,
+      subject: `New Inquiry from ${fullName}${selectedProduct ? ` : ${selectedProduct.title}` : ''}`,
       html: htmlEmail,
     })
 

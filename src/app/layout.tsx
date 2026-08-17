@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
+    default: "MARUTI KRIT TEXTILES | Premium Textile Manufacturing",
     template: "%s | MARUTI KRIT TEXTILES",
   },
   description:
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://marutikrittextiles.com",
     siteName: "MARUTI KRIT TEXTILES",
-    title: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
+    title: "MARUTI KRIT TEXTILES | Premium Textile Manufacturing",
     description:
       "Leading premium textile manufacturer with 10+ years of excellence. Specializing in garment production, fabric sourcing, and custom textile solutions for brands.",
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
+        alt: "MARUTI KRIT TEXTILES | Premium Textile Manufacturing",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MARUTI KRIT TEXTILES — Premium Textile Manufacturing",
+    title: "MARUTI KRIT TEXTILES | Premium Textile Manufacturing",
     description:
       "Leading premium textile manufacturer with 10+ years of excellence. Garment production, fabric sourcing, and custom textile solutions.",
     images: ["/og-image.png"],

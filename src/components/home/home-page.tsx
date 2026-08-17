@@ -121,7 +121,7 @@ const WHY_CHOOSE_ITEMS = [
   },
   {
     title: 'Scalable Production',
-    description: 'From small batches to millions of units — we scale seamlessly with your needs.',
+    description: 'From small batches to millions of units, we scale seamlessly with your needs.',
   },
   {
     title: 'Modern Machinery',
@@ -503,7 +503,7 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
                 </h2>
                 <p className="text-black/50 text-base mt-6 leading-relaxed max-w-md">
                   We combine deep industry expertise with modern manufacturing capabilities to
-                  deliver results that exceed expectations — every time.
+                  deliver results that exceed expectations, every time.
                 </p>
               </div>
             </FadeUp>
