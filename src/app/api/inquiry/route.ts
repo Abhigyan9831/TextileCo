@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
       printingRequired, printingType, embroideryRequired, privateLabeling, customPackaging,
       expectedDelivery, budgetRange, urgency,
       additionalNotes,
-      selectedProduct, selectedSize,
+      selectedProduct, selectedSize, selectedColor,
     } = body
 
     const origin = req.nextUrl.origin || 'https://marutikrittextiles.com'
@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
                   <p style="margin:2px 0 0;font-size:16px;font-weight:900;color:#000;">${selectedProduct.title}</p>
                   <p style="margin:2px 0 0;font-size:12px;color:#00000080;">SKU: ${selectedProduct.sku}</p>
                   <p style="margin:8px 0 0;font-size:13px;font-weight:600;color:#000;">Size: ${selectedSize || 'Not selected'}</p>
+                  ${selectedColor ? `<p style="margin:4px 0 0;font-size:13px;font-weight:600;color:#000;">Color: <span style="display:inline-block;width:14px;height:14px;background:${selectedColor};border:1px solid #ccc;vertical-align:middle;margin-left:4px;border-radius:2px;"></span> ${selectedColor}</p>` : ''}
                 </td>
               </tr>
             </table>

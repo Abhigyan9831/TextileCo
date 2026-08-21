@@ -208,7 +208,6 @@ const PRODUCTS = [
 ]
 
 function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCTS[0]; idx: number; onBookContract: ProductsPageProps['onBookContract'] }) {
-  const [selectedColor, setSelectedColor] = useState<string | null>(null)
   const [isMoreOpen, setIsMoreOpen] = useState(false)
 
   const handleWhatsApp = () => {
@@ -249,23 +248,17 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
                   src={product.image}
                   alt={product.title}
                   className="max-h-[260px] sm:max-h-[320px] w-auto object-contain drop-shadow-md transition-all duration-300"
-                  style={{
-                    filter: getColorFilter(selectedColor || ''),
-                  }}
                 />
               </motion.div>
 
               {/* Color swatches */}
               <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-full px-2">
                 {SWATCHES.map((color) => (
-                  <button
+                  <div
                     key={color}
-                    onClick={() => setSelectedColor(selectedColor === color ? null : color)}
-                    className="w-6 h-6 rounded-sm shadow-sm transition-all duration-200 cursor-pointer"
+                    className="w-5 h-5 rounded-sm shadow-sm border border-black/20"
                     style={{
                       backgroundColor: color,
-                      border: selectedColor === color ? '2px solid #FF6B2B' : '1px solid rgba(0,0,0,0.2)',
-                      transform: selectedColor === color ? 'scale(1.2)' : 'scale(1)',
                     }}
                   />
                 ))}

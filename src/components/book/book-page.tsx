@@ -23,6 +23,7 @@ interface BookPageProps {
 }
 
 const garmentTypes = ['T-Shirts', 'Polo Shirts', 'Hoodies', 'Joggers', 'Shorts', 'Other']
+const SWATCHES = ['#FFD700', '#C85A17', '#FFFFFF', '#0000CD', '#00A86B', '#ADFF2F', '#00BFFF', '#000000']
 
 const fabricPreferences = [
   '100% Cotton',
@@ -59,6 +60,35 @@ const trustBadges = [
   { icon: ShieldCheck, label: 'Dedicated Manager', description: 'Personal project manager' },
 ]
 
+// Convert hex to HSL
+function hexToHsl(hex: string): [number, number, number] {
+  const r = parseInt(hex.slice(1, 3), 16) / 255
+  const g = parseInt(hex.slice(3, 5), 16) / 255
+  const b = parseInt(hex.slice(5, 7), 16) / 255
+  const max = Math.max(r, g, b), min = Math.min(r, g, b)
+  const l = (max + min) / 2
+  if (max === min) return [0, 0, l]
+  const d = max - min
+  const s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+  let h = 0
+  if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6
+  else if (max === g) h = ((b - r) / d + 2) / 6
+  else h = ((r - g) / d + 4) / 6
+  return [h * 360, s * 100, l * 100]
+}
+
+function getColorFilter(hex: string): string {
+  if (!hex) return 'none'
+  const [h, s, l] = hexToHsl(hex)
+  if (hex === '#000000') {
+    return 'brightness(0.3) grayscale(1) contrast(1.1)'
+  }
+  if (hex === '#FFFFFF') {
+    return 'brightness(1.5) grayscale(1) contrast(0.9)'
+  }
+  return `hue-rotate(${h - 200}deg) saturate(${1.5 + (s / 100)}) brightness(${0.75 + (l / 150)})`
+}
+
 export default function BookPage({ onNavigate, selectedProduct }: BookPageProps) {
   const [formData, setFormData] = useState({
     // Section 1: Your Information
@@ -74,6 +104,7 @@ export default function BookPage({ onNavigate, selectedProduct }: BookPageProps)
     fabricPreference: '',
     gsmRange: '',
     selectedSize: selectedProduct?.sizes[0] ?? '',
+    selectedColor: '',
     // Section 3: Customization
     printingRequired: '',
     printingType: '',
@@ -293,10 +324,10 @@ export default function BookPage({ onNavigate, selectedProduct }: BookPageProps)
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="border-t border-black/8" />
+                {selectedProduct && <div className="border-t border-black/8" />}
 
                 {/* ──── Section 2: Product Details ──── */}
+                {selectedProduct && (
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-8 h-8 flex items-center justify-center bg-mk-orange text-black text-sm font-bold">
@@ -307,7 +338,7 @@ export default function BookPage({ onNavigate, selectedProduct }: BookPageProps)
 
                   {/* Product Preview Card */}
                   {selectedProduct && !productDismissed && (
-                    <div className="mb-6 p-4 border border-[#FF6B2B]/30 bg-[#FF6B2B]/5 flex gap-4 items-start relative">
+                    <div className="mb-6 p-4 border border-[#FF6B2B]/30 bg-[#FF6B2B]/5 flex flex-col sm:flex-row gap-4 items-start relative">
                       <button
                         type="button"
                         onClick={() => setProductDismissed(true)}
@@ -319,23 +350,46 @@ export default function BookPage({ onNavigate, selectedProduct }: BookPageProps)
                       <img
                         src={selectedProduct.image}
                         alt={selectedProduct.title}
-                        className="w-24 h-24 object-contain bg-white/60 border border-black/10 p-1"
+                        className="w-24 h-24 object-contain bg-white/60 border border-black/10 p-1 transition-all duration-300"
+                        style={{
+                          filter: getColorFilter(formData.selectedColor),
+                        }}
                       />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs text-[#FF6B2B] font-semibold uppercase tracking-wider mb-0.5">Selected Product</p>
                         <p className="text-base font-black text-black leading-tight">{selectedProduct.title}</p>
                         <p className="text-xs text-black/50 mt-0.5 mb-3">SKU: {selectedProduct.sku}</p>
-                        <div>
-                          <label className="block text-xs font-medium text-black/70 mb-1">Select Size</label>
-                          <select
-                            value={formData.selectedSize}
-                            onChange={(e) => setFormData(prev => ({ ...prev, selectedSize: e.target.value }))}
-                            className="px-3 py-1.5 bg-white border border-black/10 text-black text-sm focus:outline-none focus:border-[#FF6B2B] transition-colors duration-300 appearance-none cursor-pointer"
-                          >
-                            {selectedProduct.sizes.map(s => (
-                              <option key={s} value={s}>{s}</option>
-                            ))}
-                          </select>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <div>
+                            <label className="block text-xs font-medium text-black/70 mb-1">Select Size</label>
+                            <select
+                              value={formData.selectedSize}
+                              onChange={(e) => setFormData(prev => ({ ...prev, selectedSize: e.target.value }))}
+                              className="px-3 py-1.5 bg-white border border-black/10 text-black text-sm focus:outline-none focus:border-[#FF6B2B] transition-colors duration-300 appearance-none cursor-pointer"
+                            >
+                              {selectedProduct.sizes.map(s => (
+                                <option key={s} value={s}>{s}</option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium text-black/70 mb-1">Select Color</label>
+                            <div className="flex flex-wrap gap-1.5 mt-1">
+                              {SWATCHES.map((color) => (
+                                <button
+                                  key={color}
+                                  type="button"
+                                  onClick={() => setFormData(prev => ({ ...prev, selectedColor: color }))}
+                                  className="w-6 h-6 rounded-sm shadow-sm transition-all duration-200 cursor-pointer"
+                                  style={{
+                                    backgroundColor: color,
+                                    border: formData.selectedColor === color ? '2px solid #FF6B2B' : '1px solid rgba(0,0,0,0.2)',
+                                    transform: formData.selectedColor === color ? 'scale(1.15)' : 'scale(1)',
+                                  }}
+                                />
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -436,6 +490,7 @@ export default function BookPage({ onNavigate, selectedProduct }: BookPageProps)
                     </div>
                   </div>
                 </div>
+                )}
 
                 {/* Divider */}
                 <div className="border-t border-black/8" />
