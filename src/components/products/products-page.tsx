@@ -221,9 +221,9 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
       <div className="relative overflow-hidden rounded-xl border border-black/10 transition-all duration-300 hover:shadow-xl" style={{ backgroundColor: '#FFFFE3' }}>
         <div className="p-4 sm:p-6 lg:p-8">
           {/* Header */}
-          <div className="flex flex-wrap items-center justify-between border-b border-black/15 pb-4 mb-6">
-            <h2 className="text-2xl sm:text-3xl font-black text-black tracking-wider uppercase">{product.category}</h2>
-            <div className="flex items-center gap-6 text-xs sm:text-sm font-bold text-black/80">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/15 pb-4 mb-6">
+            <h2 className="text-xl sm:text-3xl font-black text-black tracking-wider uppercase">{product.category}</h2>
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-black/80">
               <div>
                 <span className="text-black/50 block text-[10px] uppercase tracking-wider">MINIMUM ORDER</span>
                 {product.minOrder}
@@ -239,16 +239,16 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
           {/* Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Image + swatches */}
-            <div className="flex flex-col items-center space-y-4 sticky top-6">
+            <div className="flex flex-col items-center space-y-4 md:sticky md:top-6">
               <motion.div
-                className="max-w-[360px] w-full min-h-[300px] flex items-center justify-center cursor-pointer relative"
+                className="max-w-[360px] w-full min-h-[220px] sm:min-h-[300px] flex items-center justify-center cursor-pointer relative px-2"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="max-h-[320px] w-auto object-contain drop-shadow-md transition-all duration-300"
+                  className="max-h-[260px] sm:max-h-[320px] w-auto object-contain drop-shadow-md transition-all duration-300"
                   style={{
                     filter: getColorFilter(selectedColor || ''),
                   }}
@@ -256,7 +256,7 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
               </motion.div>
 
               {/* Color swatches */}
-              <div className="flex items-center gap-1.5">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-full px-2">
                 {SWATCHES.map((color) => (
                   <button
                     key={color}

@@ -142,28 +142,28 @@ const WHY_CHOOSE_ITEMS = [
 // ============================================
 const PORTFOLIO_ITEMS = [
   {
-    src: '/images/products-1.png',
-    category: 'T-Shirts',
+    src: '/images/p10.jpeg',
+    category: 'T-Shirts & Hoodies',
     span: 'col-span-1 md:col-span-2 row-span-1 md:row-span-2',
   },
   {
-    src: '/images/products-2.png',
-    category: 'Custom Apparel',
+    src: '/images/p4.jpeg',
+    category: 'Varsity Jackets',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/collection.png',
-    category: 'Collections',
+    src: '/images/p5.jpeg',
+    category: 'Casual Wear',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/fabric-texture.png',
-    category: 'Fabrics',
+    src: '/images/p8.jpeg',
+    category: 'Activewear',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/packaging.png',
-    category: 'Packaging',
+    src: '/images/portfolio1.jpeg',
+    category: 'Bulk Packaging',
     span: 'col-span-1 md:col-span-2 row-span-1',
   },
 ]

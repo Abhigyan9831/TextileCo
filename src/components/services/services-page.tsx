@@ -206,16 +206,7 @@ export default function ServicesPage({ onNavigate, onBookContract }: ServicesPag
                     variants={staggerChildVariants}
                     className="relative"
                   >
-                    {/* Connector line */}
-                    {index < processSteps.length - 1 && (
-                      <div className="absolute top-8 left-[60%] right-0 h-[1px] bg-[#FFFFE3]/10" />
-                    )}
-                    {/* Orange dot on connector */}
-                    {index < processSteps.length - 1 && (
-                      <div className="absolute top-[7px] right-0 translate-x-1/2 w-[3px] h-[3px] rounded-full bg-[#FF6B2B]" />
-                    )}
-
-                    <div className="pr-8">
+                    <div className="pr-4 lg:pr-8">
                       {/* Number */}
                       <span className="text-5xl font-black text-[#FF6B2B]/20 leading-none">
                         {step.number}

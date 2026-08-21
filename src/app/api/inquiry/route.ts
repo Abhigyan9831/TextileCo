@@ -16,13 +16,18 @@ export async function POST(req: NextRequest) {
       selectedProduct, selectedSize,
     } = body
 
+    const origin = req.nextUrl.origin || 'https://marutikrittextiles.com'
+    const absoluteImageUrl = selectedProduct?.image
+      ? (selectedProduct.image.startsWith('http') ? selectedProduct.image : `${origin}${selectedProduct.image.startsWith('/') ? '' : '/'}${selectedProduct.image}`)
+      : ''
+
     const productHtml = selectedProduct
       ? `<tr>
           <td style="padding:16px;background:#FFF5EB;border:1px solid #FF6B2B33;" colspan="2">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
                 <td width="100" style="padding-right:16px;vertical-align:top;">
-                  <img src="${selectedProduct.image}" alt="${selectedProduct.title}" style="width:90px;height:90px;object-fit:contain;border:1px solid #eee;background:#fff;padding:4px;" />
+                  <img src="${absoluteImageUrl}" width="90" height="90" alt="${selectedProduct.title}" style="display:block;width:90px;height:90px;max-width:90px;max-height:90px;object-fit:contain;border:1px solid #eeeeee;background-color:#ffffff;padding:4px;" />
                 </td>
                 <td style="vertical-align:top;">
                   <p style="margin:0;font-size:11px;color:#FF6B2B;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Selected Product</p>

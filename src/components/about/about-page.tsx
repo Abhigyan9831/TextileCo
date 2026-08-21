@@ -92,9 +92,10 @@ const TEAM_MEMBERS = [
 ] as const;
 
 const GALLERY_IMAGES = [
-  { src: '/images/factory.png', alt: 'Manufacturing facility', span: 'col-span-2 row-span-2' },
-  { src: '/images/printing.png', alt: 'Textile printing process', span: 'col-span-1 row-span-1' },
-  { src: '/images/collection.png', alt: 'Finished textile collection', span: 'col-span-1 row-span-1' },
+  { src: '/images/factory.png', alt: 'Manufacturing facility', span: 'col-span-1' },
+  { src: '/images/printing.png', alt: 'Textile printing process', span: 'col-span-1' },
+  { src: '/images/collection.png', alt: 'Finished textile collection', span: 'col-span-1' },
+  { src: '/images/packaging.png', alt: 'Custom brand packaging', span: 'col-span-1' },
 ] as const;
 
 // ============================================
@@ -398,17 +399,13 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
           <StaggerContainer
             staggerDelay={0.15}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 h-auto lg:h-[520px]"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6"
           >
-            {GALLERY_IMAGES.map((image, index) => (
+            {GALLERY_IMAGES.map((image) => (
               <motion.div
                 key={image.src}
                 variants={staggerChildVariants}
-                className={`${image.span} relative rounded-2xl overflow-hidden group cursor-pointer ${
-                  index === 0
-                    ? 'aspect-square lg:aspect-auto'
-                    : 'aspect-square'
-                }`}
+                className={`${image.span} relative rounded-2xl overflow-hidden group cursor-pointer aspect-[4/3] sm:aspect-[16/10] min-h-[220px]`}
               >
                 <Image
                   src={image.src}
