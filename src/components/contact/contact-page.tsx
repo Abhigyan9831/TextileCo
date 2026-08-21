@@ -56,22 +56,34 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: '',
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-      setTimeout(() => setIsSubmitted(false), 5000)
-    }, 1500)
+      if (res.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          message: '',
+        })
+        setTimeout(() => setIsSubmitted(false), 5000)
+      } else {
+        alert('Failed to send message. Please try again.')
+      }
+    } catch {
+      alert('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -352,12 +364,17 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
       <section className="py-12 lg:py-16 px-4">
         <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <div className="w-full h-64 sm:h-80 lg:h-96 bg-black/5 border border-black/10 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-10 h-10 text-black/20 mx-auto mb-3" />
-                <p className="text-black/30 text-sm font-medium">Map Coming Soon</p>
-                <p className="text-black/20 text-xs mt-1">Interactive map will be available here</p>
-              </div>
+            <div className="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-black/10 shadow-sm">
+              <iframe
+                title="Maruti Krit Textiles Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14736.29699668383!2d88.3638815!3d22.572646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a16773247d%3A0x6e8810237c152912!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </FadeUp>
         </div>

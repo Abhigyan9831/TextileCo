@@ -38,10 +38,8 @@ const services = [
 ]
 
 const socialLinks = [
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Facebook, label: 'Facebook', href: '#' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/maruti_krit_textiles/' },
+  { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/share/1JgFqYSfBd/' },
 ]
 
 export default function Footer({ onNavigate }: FooterProps) {
@@ -120,6 +118,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-9 h-9 flex items-center justify-center border border-[#FFFFE3]/15 text-[#FFFFE3]/50 hover:text-[#FF6B2B] hover:border-[#FF6B2B]/40 transition-colors duration-300"
                   whileHover={{ y: -2 }}

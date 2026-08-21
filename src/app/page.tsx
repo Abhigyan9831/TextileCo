@@ -12,6 +12,8 @@ import PortfolioPage from '@/components/portfolio/portfolio-page'
 import BlogPage from '@/components/blog/blog-page'
 import ContactPage from '@/components/contact/contact-page'
 import BookPage from '@/components/book/book-page'
+import ScrollToTop from '@/components/scroll-to-top'
+import WhatsAppButton from '@/components/whatsapp-button'
 
 const pageVariants = {
   initial: { opacity: 0, y: 12 },
@@ -83,6 +85,8 @@ export default function Home() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <ScrollToTop />
+      <WhatsAppButton currentPage={currentPage} />
     </div>
   )
 }

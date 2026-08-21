@@ -222,35 +222,31 @@ export interface Testimonial {
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    quote:
-      "MARUTI KRIT TEXTILES has been our trusted manufacturing partner for over 5 years. Their attention to quality and ability to scale production has been instrumental in our brand's growth across European markets.",
-    author: "Elena Rodriguez",
-    role: "Head of Sourcing",
-    company: "Maison Lumière Fashion House",
+    quote: "Needed hoodies for my college in bulk. Got 350pcs in just 4days and at factory rates. The owner is really helpful. Ordering next year again for sure.",
+    author: "Bitanu Dey",
+    role: "Verified Client",
+    company: "College Bulk Order",
   },
   {
     id: 2,
-    quote:
-      "The team at MARUTI KRIT delivered exceptional results on our sustainable clothing line. Their GOTS-certified production and transparent supply chain gave our customers the confidence they needed in our eco-friendly promises.",
-    author: "James Whitfield",
-    role: "Founder & CEO",
-    company: "GreenThread Apparel Co.",
+    quote: "best place for polo and round tshirts. standard rates.",
+    author: "JIVIN KUNDU",
+    role: "Verified Client",
+    company: "Apparel Partner",
   },
   {
     id: 3,
-    quote:
-      "We switched to MARUTI KRIT for our private label manufacturing and saw a 30% reduction in lead times without any compromise on quality. Their project management and communication are world-class.",
-    author: "Priya Sharma",
-    role: "VP of Operations",
-    company: "Nexus Retail Group",
+    quote: "Loved the quality",
+    author: "SUBHO PHOTOGRAPHY",
+    role: "Verified Client",
+    company: "Studio Partner",
   },
   {
     id: 4,
-    quote:
-      "From custom fabric development to final delivery, MARUTI KRIT TEXTILES handles everything seamlessly. Their design team's creativity and technical expertise have helped us launch three successful seasonal collections.",
-    author: "Marcus Chen",
-    role: "Creative Director",
-    company: "Urban Axis Streetwear",
+    quote: "Best pricing. Round necks starting at just rs45. Recieved my delivery in just 3days.",
+    author: "A.L STUDIO",
+    role: "Verified Client",
+    company: "Studio Partner",
   },
 ];
 
@@ -343,23 +339,13 @@ export interface SocialLink {
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    platform: "LinkedIn",
-    url: "https://www.linkedin.com/company/marutikrittextiles",
-    icon: "linkedin",
-  },
-  {
-    platform: "Twitter",
-    url: "https://twitter.com/marutikrittextiles",
-    icon: "twitter",
-  },
-  {
     platform: "Instagram",
-    url: "https://www.instagram.com/marutikrittextiles",
+    url: "https://www.instagram.com/maruti_krit_textiles/",
     icon: "instagram",
   },
   {
     platform: "Facebook",
-    url: "https://www.facebook.com/marutikrittextiles",
+    url: "https://www.facebook.com/share/1JgFqYSfBd/",
     icon: "facebook",
   },
 ];
