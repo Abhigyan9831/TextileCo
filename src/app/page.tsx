@@ -65,7 +65,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FFFFE3' }}>
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full" style={{ backgroundColor: '#FFFFE3' }}>
       <Navbar
         currentPage={currentPage}
         onNavigate={handleNavigate}

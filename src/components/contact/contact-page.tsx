@@ -367,7 +367,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
             <div className="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-black/10 shadow-sm">
               <iframe
                 title="Maruti Krit Textiles Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14736.29699668383!2d88.3638815!3d22.572646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a16773247d%3A0x6e8810237c152912!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Maruti+Krit+Textiles,+1+Swamiji+Sarani+Rd,+Basak+Bagan,+Kolkata+700048&output=embed&z=16"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

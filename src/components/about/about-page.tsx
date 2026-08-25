@@ -47,7 +47,7 @@ const TIMELINE_MILESTONES = [
   {
     year: '2017',
     title: 'Industry Recognition',
-    description: 'Achieved GOTS certification and entered European markets',
+    description: 'Achieved MSME certification and entered Indian markets ',
   },
   {
     year: '2021',
@@ -56,7 +56,7 @@ const TIMELINE_MILESTONES = [
   },
   {
     year: '2025',
-    title: 'International Reach',
+    title: 'Local Reach',
     description: 'Serving 500+ clients across 25+ cities',
   },
 ] as const;

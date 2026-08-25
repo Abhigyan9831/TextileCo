@@ -190,8 +190,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#FF6B2B] shrink-0" />
                 <p className="text-sm text-[#FFFFE3]/70 leading-relaxed">
-                  Industrial Area, Phase II,<br />
-                  Kolkata, West Bengal 700001
+                  1, Swamiji Sarani Rd, near Groww Academy, Basak Bagan,<br />
+                  Kolkata 700048
                 </p>
               </li>
             </ul>

@@ -105,16 +105,16 @@ const jsonLd = {
   email: "marutikrittextiles@gmail.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Sector 12, Industrial Area",
-    addressLocality: "Kolkata",
+    streetAddress: "1, Swamiji Sarani Rd, near Groww Academy, Basak Bagan",
+    addressLocality: "Kolkata, South Dumdum",
     addressRegion: "West Bengal",
-    postalCode: "395002",
+    postalCode: "700048",
     addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "21.1702",
-    longitude: "72.8311",
+    latitude: "22.6105",
+    longitude: "88.3970",
   },
   foundingDate: "2009",
   numberOfEmployees: {
@@ -152,7 +152,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden w-full">
       <head>
         <script
           type="application/ld+json"
@@ -161,7 +161,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[#FFFFE3] text-foreground`}
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-[#FFFFE3] text-foreground overflow-x-hidden w-full`}
         style={{ backgroundColor: "#FFFFE3" }}
       >
         {children}

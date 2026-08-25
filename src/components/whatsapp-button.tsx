@@ -25,9 +25,7 @@ export default function WhatsAppButton({ currentPage }: WhatsAppButtonProps) {
       whileTap={{ scale: 0.9 }}
       title="Chat on WhatsApp"
       aria-label="Chat on WhatsApp"
-      className="fixed z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.15)] cursor-pointer
-        md:right-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto
-        right-6 bottom-6 md:left-auto"
+      className="fixed z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.15)] cursor-pointer right-6 bottom-6"
     >
       <svg
         className="w-8 h-8 text-white fill-current"

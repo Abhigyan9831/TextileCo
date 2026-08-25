@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ChevronRight, ArrowRight, ChevronDown } from 'lucide-react'
 import { FadeUp } from '@/components/motion'
+import { cn } from '@/lib/utils'
 
 const WHATSAPP_NUMBER = '918013244984'
 
@@ -247,7 +248,12 @@ function ProductCard({ product, idx, onBookContract }: { product: typeof PRODUCT
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="max-h-[260px] sm:max-h-[320px] w-auto object-contain drop-shadow-md transition-all duration-300"
+                  className={cn(
+                    "w-auto object-contain drop-shadow-md transition-all duration-300",
+                    ['DOT KNIT', 'TECHNO MATTE (POLO)', 'COTTON SINKER (BIOWASHED)'].includes(product.title)
+                      ? "max-h-[295px] sm:max-h-[355px] scale-[1.14]"
+                      : "max-h-[260px] sm:max-h-[320px]"
+                  )}
                 />
               </motion.div>
 

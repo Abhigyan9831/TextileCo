@@ -581,7 +581,9 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
         </div>
       </section>
 
-      {/* ====== SECTION 9: BLOG PREVIEW ====== */}
+      {/* ====== SECTION 9: BLOG PREVIEW (HIDDEN) ====== */}
+      {/* Set the conditional to true or remove the wrapper to restore this section in the future */}
+      {false && (
       <section className="py-20 lg:py-28" style={{ backgroundColor: '#FFFFE3' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
@@ -641,6 +643,7 @@ export default function HomePage({ onNavigate, onBookContract }: HomePageProps) 
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* ====== SECTION 10: FINAL CTA ====== */}
       <section className="bg-black py-20 lg:py-28 relative overflow-hidden">
