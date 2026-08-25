@@ -206,13 +206,13 @@ export default function ServicesPage({ onNavigate, onBookContract }: ServicesPag
                     variants={staggerChildVariants}
                     className="relative"
                   >
-                    <div className="pr-4 lg:pr-8">
+                    <div className="px-4 lg:px-6 text-center">
                       {/* Number */}
                       <span className="text-5xl font-black text-[#FF6B2B]/20 leading-none">
                         {step.number}
                       </span>
                       {/* Icon */}
-                      <div className="mt-4 w-16 h-16 flex items-center justify-center border border-[#FFFFE3]/10 mb-5">
+                      <div className="mt-4 w-16 h-16 flex items-center justify-center border border-[#FFFFE3]/10 mb-5 mx-auto">
                         <StepIcon className="w-7 h-7 text-[#FF6B2B]" />
                       </div>
                       {/* Title */}
